@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MAL Design System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <aside class="brand-panel">
+      <div class="brand">
+        <div class="logo-mark">
+          <div class="logo-cut"></div>
+          <div class="logo-accent"></div>
+        </div>
+        <div>
+          <h1>MAL</h1>
+          <p>tecnologia sob medida</p>
+        </div>
+      </div>
+
+      <section>
+        <h2>Cores</h2>
+        <div class="colors">
+          <div><span style="background:#7CB518"></span><p>Primária<br>#7CB518</p></div>
+          <div><span style="background:#14215D"></span><p>Secundária<br>#14215D</p></div>
+          <div><span style="background:#F3F4F6"></span><p>Claro<br>#F3F4F6</p></div>
+          <div><span style="background:#FFFFFF"></span><p>Branco<br>#FFFFFF</p></div>
+        </div>
+      </section>
+
+      <section>
+        <h2>Tipografia</h2>
+        <div class="type-preview">Ag</div>
+        <p class="muted">Space Grotesk / Inter<br />Display, títulos, textos e captions.</p>
+      </section>
+    </aside>
+
+    <section class="content">
+      <section class="block">
+        <h2>Botões</h2>
+
+        <div class="grid-4">
+          <button class="btn primary">Primário</button>
+          <button class="btn primary hover">Hover</button>
+          <button class="btn primary active">Active</button>
+          <button class="btn primary" disabled>Disabled</button>
+
+          <button class="btn secondary">Secundário</button>
+          <button class="btn secondary hover">Hover</button>
+          <button class="btn secondary active">Active</button>
+          <button class="btn secondary" disabled>Disabled</button>
+
+          <button class="btn danger">Excluir</button>
+          <button class="btn icon">→</button>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Inputs</h2>
+
+        <div class="grid-3">
+          <input class="input" placeholder="Digite algo" />
+          <input class="input focus" placeholder="Focused" />
+          <input class="input" value="Valor preenchido" />
+
+          <select class="input">
+            <option>Selecione</option>
+          </select>
+
+          <input class="input" placeholder="Buscar" />
+          <input class="input" disabled placeholder="Indisponível" />
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Cards</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Título do Card</h3>
+            <p>Este é um exemplo de card com descrição curta.</p>
+            <a href="#">Saiba mais →</a>
+          </article>
+
+          <article class="card active-card">
+            <span class="badge success">Novo</span>
+            <h3>Card destacado</h3>
+            <p>Usado para destacar conteúdos importantes.</p>
+            <a href="#">Ação principal →</a>
+          </article>
+
+          <article class="card dark-card">
+            <h3>Título do Card</h3>
+            <p>Versão escura para áreas premium.</p>
+            <a href="#">Saiba mais →</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="block">
+        <h2>Tabs / Navtabs</h2>
+
+        <nav class="tabs">
+          <button class="tab active">Visão Geral</button>
+          <button class="tab">Clientes</button>
+          <button class="tab">Projetos</button>
+          <button class="tab">Financeiro</button>
+          <button class="tab">Configurações</button>
+        </nav>
+      </section>
+
+      <section class="block">
+        <h2>Stepper</h2>
+
+        <div class="stepper">
+          <div class="step active"><span>1</span><p>Informações</p></div>
+          <div class="line"></div>
+          <div class="step"><span>2</span><p>Detalhes</p></div>
+          <div class="line"></div>
+          <div class="step"><span>3</span><p>Revisão</p></div>
+          <div class="line"></div>
+          <div class="step"><span>4</span><p>Conclusão</p></div>
+        </div>
+      </section>
+
+      <section class="layout-grid">
+        <aside class="sidebar">
+          <div class="brand small">
+            <div class="logo-mark mini">
+              <div class="logo-cut"></div>
+              <div class="logo-accent"></div>
+            </div>
+            <strong>MAL</strong>
+          </div>
+
+          <a class="side-link active">Dashboard</a>
+          <a class="side-link">Clientes</a>
+          <a class="side-link">Projetos</a>
+          <a class="side-link">Tarefas</a>
+          <a class="side-link">Financeiro</a>
+          <a class="side-link">Relatórios</a>
+          <a class="side-link">Configurações</a>
+        </aside>
+
+        <section class="dashboard">
+          <h2>Dashboard</h2>
+
+          <div class="metrics">
+            <div class="metric">
+              <p>Receita</p>
+              <h3>R$ 25.430,00</h3>
+              <span>↑ 12,5%</span>
+            </div>
+
+            <div class="metric">
+              <p>Projetos</p>
+              <h3>18</h3>
+              <span>↑ 8,1%</span>
+            </div>
+
+            <div class="metric danger-text">
+              <p>Tarefas</p>
+              <h3>32</h3>
+              <span>↓ 4,3%</span>
+            </div>
+          </div>
+
+          <div class="chart-card">
+            <h3>Desempenho</h3>
+            <div class="fake-chart"></div>
+          </div>
+        </section>
+      </section>
+
+      <section class="layout-grid">
+        <form class="form-card">
+          <h2>Formulário</h2>
+
+          <label>Nome completo</label>
+          <input class="input" placeholder="Digite o nome" />
+
+          <label>E-mail</label>
+          <input class="input" placeholder="email@exemplo.com" />
+
+          <label>Segmento</label>
+          <select class="input">
+            <option>Selecione o segmento</option>
+          </select>
+
+          <div class="actions">
+            <button type="button" class="btn secondary">Cancelar</button>
+            <button type="submit" class="btn primary">Salvar</button>
+          </div>
+        </form>
+
+        <div class="table-card">
+          <h2>Tabela</h2>
+
+          <table>
+            <thead>
+              <tr>
+                <th>Cliente</th>
+                <th>E-mail</th>
+                <th>Status</th>
+                <th>Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>ACME Ltda</td>
+                <td>contato@acme.com</td>
+                <td><span class="badge success">Ativo</span></td>
+                <td>⋮</td>
+              </tr>
+              <tr>
+                <td>Startup XYZ</td>
+                <td>oi@xyz.com</td>
+                <td><span class="badge warning">Pendente</span></td>
+                <td>⋮</td>
+              </tr>
+              <tr>
+                <td>Design Studio</td>
+                <td>hello@studio.com</td>
+                <td><span class="badge danger">Inativo</span></td>
+                <td>⋮</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
