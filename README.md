@@ -83,3 +83,4 @@ src/
 - `app-metric-card`: aceita `label`, `value`, `trend` e `direction`.
 
 Os tokens de marca, cores, tipografia, raios, sombras e espacamentos ficam centralizados em `src/styles.css`.
+
