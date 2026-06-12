@@ -1,0 +1,8 @@
+<article
+  class="calendar-event"
+  [class.is-info]="variant === 'info'"
+  [class.is-warning]="variant === 'warning'">
+  <time>{{ time }}</time>
+  <strong>{{ title }}</strong>
+  <span class="muted"><ng-content /></span>
+</article>

@@ -1,0 +1,12 @@
+<aside class="sidebar">
+  @if (branded) {
+    <div class="brand">
+      <app-logo size="small" />
+      <strong>MAL</strong>
+    </div>
+  }
+
+  @for (item of items; track item; let index = $index) {
+    <a class="side-link" [class.is-active]="index === activeIndex" href="#">{{ item }}</a>
+  }
+</aside>

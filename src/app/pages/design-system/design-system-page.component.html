@@ -1,0 +1,291 @@
+<div class="presentation-shell">
+  <app-header
+    class="presentation-header"
+    title="MAL Design System"
+    tagline="Biblioteca Angular com componentes reutilizaveis.">
+    <app-badge variant="success">Angular</app-badge>
+  </app-header>
+
+  <main class="page">
+    <aside class="brand-panel">
+      <section class="panel-block">
+        <p class="eyebrow">Navegacao</p>
+        <nav class="nav-list" aria-label="Secoes do design system">
+          @for (item of docsNav; track item; let index = $index) {
+            <a href="#" [class.is-active]="index === 0">{{ item }}</a>
+          }
+        </nav>
+      </section>
+
+      <section class="panel-block">
+        <p class="eyebrow">Logos em public</p>
+        <div class="logo-assets">
+          <a class="logo-asset logo-asset-light" href="/logo-mal-azul.png" target="_blank">
+            <img src="/logo-mal-azul.png" alt="Logo MAL azul" />
+            <span>logo-mal-azul.png</span>
+          </a>
+          <a class="logo-asset logo-asset-dark" href="/logo-mal-branca.png" target="_blank">
+            <img src="/logo-mal-branca.png" alt="Logo MAL branca" />
+            <span>logo-mal-branca.png</span>
+          </a>
+        </div>
+      </section>
+    </aside>
+
+    <section class="content">
+      <section class="ds-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">01 / Fundacao</p>
+            <h2>Tokens de identidade</h2>
+            <p>Cores, tipografia, espacamentos, raios e sombras centralizados em <code>src/styles.css</code>.</p>
+          </div>
+          <app-badge variant="success">Reutilizavel</app-badge>
+        </div>
+
+        <div class="token-grid">
+          <div class="swatch">
+            <span class="swatch-color" style="background:#7cb518"></span>
+            <span class="token-name">Primary</span>
+            <span class="token-value">--mal-primary / #7CB518</span>
+          </div>
+          <div class="swatch">
+            <span class="swatch-color" style="background:#14215d"></span>
+            <span class="token-name">Secondary</span>
+            <span class="token-value">--mal-secondary / #14215D</span>
+          </div>
+          <div class="swatch">
+            <span class="swatch-color" style="background:#0d1f3c"></span>
+            <span class="token-name">Navy</span>
+            <span class="token-value">--mal-navy / #0D1F3C</span>
+          </div>
+          <div class="swatch">
+            <span class="swatch-color" style="background:#f3f4f6"></span>
+            <span class="token-name">Background</span>
+            <span class="token-value">--color-bg / #F3F4F6</span>
+          </div>
+        </div>
+
+        <div class="type-row token-type">
+          <div class="type-display">Ag</div>
+          <p class="muted">Space Grotesk para marca e titulos. Inter para textos e interfaces.</p>
+        </div>
+      </section>
+
+      <section class="ds-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">02 / Como usar</p>
+            <h2>Uso dos componentes</h2>
+            <p>Cada componente tem uma tag Angular propria, entradas por atributo e tamanho visual padronizado.</p>
+          </div>
+        </div>
+
+        <div class="usage-grid">
+          @for (doc of usageDocs; track doc.title) {
+            <article class="usage-card">
+              <h3>{{ doc.title }}</h3>
+              <p>{{ doc.description }}</p>
+              <pre><code>{{ doc.code }}</code></pre>
+            </article>
+          }
+        </div>
+      </section>
+
+      <section class="ds-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">03 / Componentes</p>
+            <h2>Tipos de botoes nomeados</h2>
+            <p>Todos usam altura, largura minima e raio padrao definidos no design system.</p>
+          </div>
+        </div>
+
+        <div class="button-group-grid">
+          @for (group of buttonGroups; track group.title) {
+            <section class="component-panel">
+              <h3>{{ group.title }}</h3>
+              <div class="button-list">
+                @for (button of group.examples; track button.name) {
+                  <article class="button-row">
+                    <div>
+                      <strong>{{ button.name }}</strong>
+                      <span>{{ button.usage }}</span>
+                    </div>
+                    <app-button
+                      [variant]="button.variant"
+                      [hover]="button.hover || false"
+                      [disabled]="button.disabled || false"
+                      [icon]="button.icon || false"
+                      [ariaLabel]="button.name">
+                      {{ button.label || button.name }}
+                    </app-button>
+                  </article>
+                }
+              </div>
+            </section>
+          }
+        </div>
+      </section>
+
+      <section class="ds-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">04 / Entrada de dados</p>
+            <h2>Inputs e formularios</h2>
+            <p>Use <code>app-text-field</code> para input, select e textarea com o mesmo padrao visual.</p>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <app-text-field label="Nome completo" placeholder="Digite o nome" hint="Use nome e sobrenome." />
+          <app-text-field label="Status" kind="select" placeholder="Selecione o status" [options]="statusOptions" />
+          <app-text-field label="E-mail" value="email-sem-dominio" hint="Informe um e-mail valido." [invalid]="true" />
+          <app-text-field label="Campo desabilitado" placeholder="Indisponivel" [disabled]="true" />
+          <app-text-field class="form-wide" label="Observacoes" kind="textarea" placeholder="Descreva o contexto do projeto" />
+        </div>
+      </section>
+
+      <section class="ds-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">05 / Conteudo</p>
+            <h2>Cards, badges, tabs e stepper</h2>
+            <p>Os cards estao separados por tipo para leitura rapida na apresentacao.</p>
+          </div>
+        </div>
+
+        <div class="split-showcase">
+          <section class="component-panel">
+            <h3>Cards informativos</h3>
+            <div class="card-grid card-grid-split">
+              <app-card title="Card padrao" badge="Base" badgeVariant="info" action="Saiba mais">
+                Para informacoes curtas com uma acao complementar.
+              </app-card>
+              <app-card title="Card destacado" variant="active" badge="Novo" badgeVariant="success" action="Acao principal">
+                Usado quando uma opcao precisa ganhar prioridade visual.
+              </app-card>
+            </div>
+          </section>
+
+          <section class="component-panel">
+            <h3>Card institucional</h3>
+            <app-card title="Card escuro" variant="dark" badge="Premium" badgeVariant="warning" action="Ver detalhes">
+              Boa opcao para planos, alertas de marca ou features especiais.
+            </app-card>
+          </section>
+        </div>
+
+        <section class="component-panel component-panel-spaced">
+          <h3>Navegacao e progresso</h3>
+          <app-tabs [items]="tabs" [activeIndex]="0" />
+          <app-stepper [steps]="steps" [activeIndex]="0" />
+        </section>
+      </section>
+
+      <section class="ds-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">06 / Agenda</p>
+            <h2>Calendario e eventos</h2>
+            <p>Use para agendas, prazos e marcos de projeto.</p>
+          </div>
+          <app-button variant="primary">Novo evento</app-button>
+        </div>
+
+        <div class="calendar-shell">
+          <app-calendar title="Junho 2026" [today]="12" [selected]="12" [events]="eventDays" />
+          <aside class="agenda">
+            <app-event-card time="Hoje, 09:00" title="Reuniao de discovery">
+              Alinhamento com cliente enterprise.
+            </app-event-card>
+            <app-event-card variant="info" time="Hoje, 14:30" title="Entrega do prototipo">
+              Revisao de telas e componentes.
+            </app-event-card>
+            <app-event-card variant="warning" time="16 Jun, 10:00" title="Fechamento financeiro">
+              Conferir pendencias e notas.
+            </app-event-card>
+          </aside>
+        </div>
+      </section>
+
+      <section class="ds-section">
+        <div class="section-header">
+          <div>
+            <p class="eyebrow">07 / Padroes</p>
+            <h2>Layouts prontos para reaproveitar</h2>
+            <p>Composicao de sidebar, dashboard, formulario e tabela usando os componentes.</p>
+          </div>
+        </div>
+
+        <section class="layout-grid">
+          <app-sidebar [items]="appNav" [activeIndex]="0" />
+
+          <section class="surface dashboard">
+            <h2>Dashboard</h2>
+            <div class="metric-grid">
+              <app-metric-card label="Receita" value="R$ 25.430" trend="+12,5%" />
+              <app-metric-card label="Projetos" value="18" trend="+8,1%" />
+              <app-metric-card label="Tarefas" value="32" trend="-4,3%" direction="down" />
+            </div>
+            <div class="chart-card">
+              <h3>Desempenho</h3>
+              <div class="fake-chart" aria-hidden="true"></div>
+            </div>
+          </section>
+        </section>
+
+        <section class="layout-grid pattern-spacer">
+          <form class="form-card">
+            <h2>Novo cliente</h2>
+            <app-text-field label="Nome completo" placeholder="Digite o nome" />
+            <app-text-field label="E-mail" placeholder="email@exemplo.com" />
+            <app-text-field label="Segmento" kind="select" placeholder="Selecione o segmento" [options]="statusOptions" />
+            <div class="actions">
+              <app-button variant="secondary">Cancelar</app-button>
+              <app-button variant="primary" type="submit">Salvar</app-button>
+            </div>
+          </form>
+
+          <div class="table-card">
+            <h2>Tabela</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Cliente</th>
+                    <th>E-mail</th>
+                    <th>Status</th>
+                    <th>Acoes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ACME Ltda</td>
+                    <td>contato@acme.com</td>
+                    <td><app-badge variant="success">Ativo</app-badge></td>
+                    <td><app-button variant="ghost" [icon]="true" ariaLabel="Mais acoes">...</app-button></td>
+                  </tr>
+                  <tr>
+                    <td>Startup XYZ</td>
+                    <td>oi@xyz.com</td>
+                    <td><app-badge variant="warning">Pendente</app-badge></td>
+                    <td><app-button variant="ghost" [icon]="true" ariaLabel="Mais acoes">...</app-button></td>
+                  </tr>
+                  <tr>
+                    <td>Design Studio</td>
+                    <td>hello@studio.com</td>
+                    <td><app-badge variant="danger">Inativo</app-badge></td>
+                    <td><app-button variant="ghost" [icon]="true" ariaLabel="Mais acoes">...</app-button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </section>
+    </section>
+  </main>
+
+  <app-footer />
+</div>

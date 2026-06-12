@@ -1,0 +1,26 @@
+<label class="input-group">
+  <span>{{ label }}</span>
+
+  @if (kind === 'textarea') {
+    <textarea class="textarea" [placeholder]="placeholder" [disabled]="disabled">{{ value }}</textarea>
+  } @else if (kind === 'select') {
+    <select class="input" [disabled]="disabled" [class.is-invalid]="invalid">
+      <option>{{ placeholder }}</option>
+      @for (option of options; track option) {
+        <option>{{ option }}</option>
+      }
+    </select>
+  } @else {
+    <input
+      class="input"
+      [type]="type"
+      [placeholder]="placeholder"
+      [value]="value"
+      [disabled]="disabled"
+      [class.is-invalid]="invalid" />
+  }
+
+  @if (hint) {
+    <span class="field-hint">{{ hint }}</span>
+  }
+</label>

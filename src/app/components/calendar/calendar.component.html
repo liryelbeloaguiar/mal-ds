@@ -1,0 +1,28 @@
+<section class="calendar" aria-label="Calendario mensal">
+  <div class="calendar-header">
+    <h3 class="calendar-title">{{ title }}</h3>
+    <div class="calendar-controls">
+      <button class="icon-btn" type="button" aria-label="Mes anterior">&lsaquo;</button>
+      <button class="icon-btn" type="button" aria-label="Proximo mes">&rsaquo;</button>
+    </div>
+  </div>
+
+  <div class="calendar-grid">
+    @for (weekday of weekdays; track weekday) {
+      <span class="calendar-weekday">{{ weekday }}</span>
+    }
+
+    @for (day of days; track day.label + day.muted) {
+      <button
+        class="calendar-day"
+        type="button"
+        [class.is-muted]="day.muted"
+        [class.is-today]="!day.muted && +day.label === today"
+        [class.is-selected]="!day.muted && +day.label === selected"
+        [class.has-event]="hasEvent(day)"
+        (click)="select(day)">
+        {{ day.label }}
+      </button>
+    }
+  </div>
+</section>

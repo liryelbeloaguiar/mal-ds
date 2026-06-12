@@ -1,0 +1,12 @@
+<article class="card" [class.is-active]="variant === 'active'" [class.is-dark]="variant === 'dark'">
+  @if (badge) {
+    <app-badge [variant]="badgeVariant">{{ badge }}</app-badge>
+  }
+  @if (title) {
+    <h3>{{ title }}</h3>
+  }
+  <p><ng-content /></p>
+  @if (action) {
+    <a [href]="href">{{ action }} &rarr;</a>
+  }
+</article>

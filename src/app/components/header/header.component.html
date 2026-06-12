@@ -1,0 +1,12 @@
+<header class="app-header">
+  <div class="header-brand">
+    <img class="header-logo" [src]="logoSrc" alt="Logo MAL" />
+    <div>
+      <h1>{{ title }}</h1>
+      <small>{{ tagline }}</small>
+    </div>
+  </div>
+  <div class="header-actions">
+    <ng-content />
+  </div>
+</header>

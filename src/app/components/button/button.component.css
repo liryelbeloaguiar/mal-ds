@@ -1,0 +1,11 @@
+:host {
+  display: inline-flex;
+}
+
+:host-context(.component-grid) {
+  min-width: 0;
+}
+
+:host-context(.component-grid) .btn {
+  width: 100%;
+}

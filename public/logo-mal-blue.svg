@@ -1,0 +1,10 @@
+<svg width="320" height="96" viewBox="0 0 320 96" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Logo MAL azul</title>
+  <desc id="desc">Marca MAL em azul com acento verde.</desc>
+  <rect width="96" height="96" rx="16" fill="#0D1F3C"/>
+  <rect x="34" y="34" width="36" height="36" rx="7" fill="#FFFFFF"/>
+  <rect x="64" y="64" width="24" height="24" rx="5" fill="#7CB518"/>
+  <path d="M124 70V26H137.5L151.3 52.4L165.1 26H178.6V70H166.4V45.2L154.8 67H147.8L136.2 45.2V70H124Z" fill="#0D1F3C"/>
+  <path d="M184.6 70L201.8 26H214.6L231.8 70H218.7L216 62.3H200.1L197.4 70H184.6ZM203.3 52.6H212.8L208.1 38.7L203.3 52.6Z" fill="#0D1F3C"/>
+  <path d="M238.6 70V26H251.4V58.8H272.4V70H238.6Z" fill="#0D1F3C"/>
+</svg>
