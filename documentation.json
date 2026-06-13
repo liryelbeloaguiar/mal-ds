@@ -1,0 +1,1947 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "ButtonShowcaseExample",
+            "id": "interface-ButtonShowcaseExample-aae21db60c96648f57b6552b87ef4534263c3b019095826a9a918573241dd7c245349463e93bd48cd6ec74916c637be28460c33468e28c4cd87a58a730dff886",
+            "file": "src/app/pages/design-system/design-system-page.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { BadgeComponent } from '../../components/badge/badge.component';\nimport { ButtonComponent } from '../../components/button/button.component';\nimport { CalendarComponent } from '../../components/calendar/calendar.component';\nimport { CardComponent } from '../../components/card/card.component';\nimport { EventCardComponent } from '../../components/event-card/event-card.component';\nimport { FooterComponent } from '../../components/footer/footer.component';\nimport { HeaderComponent } from '../../components/header/header.component';\nimport { MetricCardComponent } from '../../components/metric-card/metric-card.component';\nimport { SidebarComponent } from '../../components/sidebar/sidebar.component';\nimport { StepperComponent } from '../../components/stepper/stepper.component';\nimport { TabsComponent } from '../../components/tabs/tabs.component';\nimport { TextFieldComponent } from '../../components/text-field/text-field.component';\n\ntype ButtonShowcaseVariant = 'primary' | 'secondary' | 'danger' | 'ghost';\n\ninterface ButtonShowcaseExample {\n  name: string;\n  usage: string;\n  variant: ButtonShowcaseVariant;\n  hover?: boolean;\n  disabled?: boolean;\n  icon?: boolean;\n  label?: string;\n}\n\ninterface ButtonShowcaseGroup {\n  title: string;\n  examples: ButtonShowcaseExample[];\n}\n\n@Component({\n  selector: 'app-design-system-page',\n  imports: [\n    BadgeComponent,\n    ButtonComponent,\n    CalendarComponent,\n    CardComponent,\n    EventCardComponent,\n    FooterComponent,\n    HeaderComponent,\n    MetricCardComponent,\n    SidebarComponent,\n    StepperComponent,\n    TabsComponent,\n    TextFieldComponent,\n  ],\n  templateUrl: './design-system-page.component.html',\n  styleUrl: './design-system-page.component.css',\n})\nexport class DesignSystemPageComponent {\n  readonly docsNav = ['Tokens', 'Como usar', 'Botoes', 'Formularios', 'Cards e navegacao', 'Calendario', 'Padroes'];\n  readonly tabs = ['Visao geral', 'Clientes', 'Projetos', 'Financeiro', 'Configuracoes'];\n  readonly steps = ['Informacoes', 'Detalhes', 'Revisao', 'Conclusao'];\n  readonly appNav = ['Dashboard', 'Clientes', 'Projetos', 'Tarefas', 'Relatorios'];\n  readonly eventDays = [4, 8, 12, 16, 24];\n  readonly statusOptions = ['Ativo', 'Pendente', 'Inativo'];\n  readonly usageDocs = [\n    {\n      title: 'Header e footer',\n      description: 'Use para abrir e fechar paginas mantendo a marca MAL consistente.',\n      code: '<app-header title=\"MAL Design System\" />\\n<app-footer />',\n    },\n    {\n      title: 'Botao',\n      description: 'Use variants nomeadas e mantenha o tamanho padrao do sistema.',\n      code: '<app-button variant=\"primary\">Salvar</app-button>',\n    },\n    {\n      title: 'Sidebar',\n      description: 'Use em layouts de produto com navegacao lateral.',\n      code: '<app-sidebar [items]=\"menu\" [activeIndex]=\"0\" />',\n    },\n    {\n      title: 'Formularios',\n      description: 'Use text-field para input, select e textarea com o mesmo visual.',\n      code: '<app-text-field label=\"Nome\" placeholder=\"Digite o nome\" />',\n    },\n    {\n      title: 'Cards e badges',\n      description: 'Use para blocos de conteudo, estados e destaques.',\n      code: '<app-card title=\"Plano\" badge=\"Novo\">Texto</app-card>',\n    },\n    {\n      title: 'Calendario',\n      description: 'Use para agendas, prazos e eventos.',\n      code: '<app-calendar [events]=\"[4, 8, 12]\" />',\n    },\n  ];\n  readonly buttonGroups: ButtonShowcaseGroup[] = [\n    {\n      title: 'Acoes principais',\n      examples: [\n        { name: 'Primario', usage: 'Acao principal da tela', variant: 'primary' },\n        { name: 'Primario hover', usage: 'Estado de hover', variant: 'primary', hover: true },\n        { name: 'Primario disabled', usage: 'Acao indisponivel', variant: 'primary', disabled: true },\n      ],\n    },\n    {\n      title: 'Acoes secundarias',\n      examples: [\n        { name: 'Secundario', usage: 'Acao complementar', variant: 'secondary' },\n        { name: 'Secundario hover', usage: 'Estado de hover', variant: 'secondary', hover: true },\n        { name: 'Fantasma', usage: 'Acao discreta em barras e tabelas', variant: 'ghost' },\n      ],\n    },\n    {\n      title: 'Acoes criticas e compactas',\n      examples: [\n        { name: 'Perigo', usage: 'Excluir ou cancelar fluxo', variant: 'danger' },\n        { name: 'Icone', usage: 'Acao compacta sem texto', variant: 'primary', icon: true, label: '>' },\n        { name: 'Mais acoes', usage: 'Menu contextual', variant: 'ghost', icon: true, label: '...' },\n      ],\n    },\n  ];\n}\n",
+            "properties": [
+                {
+                    "name": "disabled",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "hover",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 21
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "usage",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19
+                },
+                {
+                    "name": "variant",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonShowcaseVariant",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "ButtonShowcaseGroup",
+            "id": "interface-ButtonShowcaseGroup-aae21db60c96648f57b6552b87ef4534263c3b019095826a9a918573241dd7c245349463e93bd48cd6ec74916c637be28460c33468e28c4cd87a58a730dff886",
+            "file": "src/app/pages/design-system/design-system-page.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { BadgeComponent } from '../../components/badge/badge.component';\nimport { ButtonComponent } from '../../components/button/button.component';\nimport { CalendarComponent } from '../../components/calendar/calendar.component';\nimport { CardComponent } from '../../components/card/card.component';\nimport { EventCardComponent } from '../../components/event-card/event-card.component';\nimport { FooterComponent } from '../../components/footer/footer.component';\nimport { HeaderComponent } from '../../components/header/header.component';\nimport { MetricCardComponent } from '../../components/metric-card/metric-card.component';\nimport { SidebarComponent } from '../../components/sidebar/sidebar.component';\nimport { StepperComponent } from '../../components/stepper/stepper.component';\nimport { TabsComponent } from '../../components/tabs/tabs.component';\nimport { TextFieldComponent } from '../../components/text-field/text-field.component';\n\ntype ButtonShowcaseVariant = 'primary' | 'secondary' | 'danger' | 'ghost';\n\ninterface ButtonShowcaseExample {\n  name: string;\n  usage: string;\n  variant: ButtonShowcaseVariant;\n  hover?: boolean;\n  disabled?: boolean;\n  icon?: boolean;\n  label?: string;\n}\n\ninterface ButtonShowcaseGroup {\n  title: string;\n  examples: ButtonShowcaseExample[];\n}\n\n@Component({\n  selector: 'app-design-system-page',\n  imports: [\n    BadgeComponent,\n    ButtonComponent,\n    CalendarComponent,\n    CardComponent,\n    EventCardComponent,\n    FooterComponent,\n    HeaderComponent,\n    MetricCardComponent,\n    SidebarComponent,\n    StepperComponent,\n    TabsComponent,\n    TextFieldComponent,\n  ],\n  templateUrl: './design-system-page.component.html',\n  styleUrl: './design-system-page.component.css',\n})\nexport class DesignSystemPageComponent {\n  readonly docsNav = ['Tokens', 'Como usar', 'Botoes', 'Formularios', 'Cards e navegacao', 'Calendario', 'Padroes'];\n  readonly tabs = ['Visao geral', 'Clientes', 'Projetos', 'Financeiro', 'Configuracoes'];\n  readonly steps = ['Informacoes', 'Detalhes', 'Revisao', 'Conclusao'];\n  readonly appNav = ['Dashboard', 'Clientes', 'Projetos', 'Tarefas', 'Relatorios'];\n  readonly eventDays = [4, 8, 12, 16, 24];\n  readonly statusOptions = ['Ativo', 'Pendente', 'Inativo'];\n  readonly usageDocs = [\n    {\n      title: 'Header e footer',\n      description: 'Use para abrir e fechar paginas mantendo a marca MAL consistente.',\n      code: '<app-header title=\"MAL Design System\" />\\n<app-footer />',\n    },\n    {\n      title: 'Botao',\n      description: 'Use variants nomeadas e mantenha o tamanho padrao do sistema.',\n      code: '<app-button variant=\"primary\">Salvar</app-button>',\n    },\n    {\n      title: 'Sidebar',\n      description: 'Use em layouts de produto com navegacao lateral.',\n      code: '<app-sidebar [items]=\"menu\" [activeIndex]=\"0\" />',\n    },\n    {\n      title: 'Formularios',\n      description: 'Use text-field para input, select e textarea com o mesmo visual.',\n      code: '<app-text-field label=\"Nome\" placeholder=\"Digite o nome\" />',\n    },\n    {\n      title: 'Cards e badges',\n      description: 'Use para blocos de conteudo, estados e destaques.',\n      code: '<app-card title=\"Plano\" badge=\"Novo\">Texto</app-card>',\n    },\n    {\n      title: 'Calendario',\n      description: 'Use para agendas, prazos e eventos.',\n      code: '<app-calendar [events]=\"[4, 8, 12]\" />',\n    },\n  ];\n  readonly buttonGroups: ButtonShowcaseGroup[] = [\n    {\n      title: 'Acoes principais',\n      examples: [\n        { name: 'Primario', usage: 'Acao principal da tela', variant: 'primary' },\n        { name: 'Primario hover', usage: 'Estado de hover', variant: 'primary', hover: true },\n        { name: 'Primario disabled', usage: 'Acao indisponivel', variant: 'primary', disabled: true },\n      ],\n    },\n    {\n      title: 'Acoes secundarias',\n      examples: [\n        { name: 'Secundario', usage: 'Acao complementar', variant: 'secondary' },\n        { name: 'Secundario hover', usage: 'Estado de hover', variant: 'secondary', hover: true },\n        { name: 'Fantasma', usage: 'Acao discreta em barras e tabelas', variant: 'ghost' },\n      ],\n    },\n    {\n      title: 'Acoes criticas e compactas',\n      examples: [\n        { name: 'Perigo', usage: 'Excluir ou cancelar fluxo', variant: 'danger' },\n        { name: 'Icone', usage: 'Acao compacta sem texto', variant: 'primary', icon: true, label: '>' },\n        { name: 'Mais acoes', usage: 'Menu contextual', variant: 'ghost', icon: true, label: '...' },\n      ],\n    },\n  ];\n}\n",
+            "properties": [
+                {
+                    "name": "examples",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonShowcaseExample[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "title",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "CalendarDay",
+            "id": "interface-CalendarDay-71a07432da71b337f9faacacca0b51547c000501dcb944a1aa1234746d8d1bf377de74688c9a5ee8c0b105f338ae32a30cd6cb5f31476d2a8aef8213fd9f6a6b",
+            "file": "src/app/components/calendar/calendar.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ninterface CalendarDay {\n  label: string;\n  muted?: boolean;\n}\n\n@Component({\n  selector: 'app-calendar',\n  templateUrl: './calendar.component.html',\n  styleUrl: './calendar.component.css',\n})\nexport class CalendarComponent {\n  @Input() title = 'Junho 2026';\n  @Input() today = 12;\n  @Input() selected = 12;\n  @Input() events: number[] = [];\n\n  readonly weekdays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];\n  readonly days: CalendarDay[] = [\n    { label: '31', muted: true },\n    ...Array.from({ length: 30 }, (_, index) => ({ label: String(index + 1) })),\n    { label: '1', muted: true },\n    { label: '2', muted: true },\n    { label: '3', muted: true },\n    { label: '4', muted: true },\n  ];\n\n  select(day: CalendarDay): void {\n    if (!day.muted) {\n      this.selected = Number(day.label);\n    }\n  }\n\n  hasEvent(day: CalendarDay): boolean {\n    return !day.muted && this.events.includes(Number(day.label));\n  }\n}\n",
+            "properties": [
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "muted",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "App",
+            "id": "component-App-f7b9708312faacfc781bc7a0b0fb49f91d1413776de1ae626fcb3626242f31f7b804de3c7b56f83445c1e19973e7e1ad508ab78ef24db7b2851d9e7890ed2b8e",
+            "file": "src/app/app.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "DesignSystemPageComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { DesignSystemPageComponent } from './pages/design-system/design-system-page.component';\n\n@Component({\n  selector: 'app-root',\n  imports: [DesignSystemPageComponent],\n  templateUrl: './app.html',\n  styleUrl: './app.css',\n})\nexport class App {}\n",
+            "styleUrl": "./app.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<app-design-system-page />\n"
+        },
+        {
+            "name": "BadgeComponent",
+            "id": "component-BadgeComponent-adbbcf6cfdb1074b70a63216bfef9fe7dfb0771f9780abf0264a78081792aa35a88d5935047303f282db2931f991f2b74b79d92429909af5a3b5b8561097c424",
+            "file": "src/app/components/badge/badge.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-badge",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./badge.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "variant",
+                    "defaultValue": "'info'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "BadgeVariant",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype BadgeVariant = 'success' | 'warning' | 'danger' | 'info';\n\n@Component({\n  selector: 'app-badge',\n  templateUrl: './badge.component.html',\n  styleUrl: './badge.component.css',\n})\nexport class BadgeComponent {\n  @Input() variant: BadgeVariant = 'info';\n}\n",
+            "styleUrl": "./badge.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<span\n  class=\"badge\"\n  [class.badge-success]=\"variant === 'success'\"\n  [class.badge-warning]=\"variant === 'warning'\"\n  [class.badge-danger]=\"variant === 'danger'\"\n  [class.badge-info]=\"variant === 'info'\">\n  <ng-content />\n</span>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-ee9e04fccf73223eae9bcce3a76eaa4e18baf3f02ab5cff5f852aaa1c02184276cccf96fa6bf448133547fac3925510b8106b78738942fbe174f190b3d325bb8",
+            "file": "src/app/components/button/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "ariaLabel",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hover",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "ButtonType",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'primary'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "ButtonVariant",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype ButtonVariant = 'primary' | 'secondary' | 'danger' | 'ghost';\ntype ButtonType = 'button' | 'submit' | 'reset';\n\n@Component({\n  selector: 'app-button',\n  templateUrl: './button.component.html',\n  styleUrl: './button.component.css',\n})\nexport class ButtonComponent {\n  @Input() variant: ButtonVariant = 'primary';\n  @Input() type: ButtonType = 'button';\n  @Input() icon = false;\n  @Input() disabled = false;\n  @Input() hover = false;\n  @Input() ariaLabel = '';\n}\n",
+            "styleUrl": "./button.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<button\n  class=\"btn\"\n  [class.btn-primary]=\"variant === 'primary'\"\n  [class.btn-secondary]=\"variant === 'secondary'\"\n  [class.btn-danger]=\"variant === 'danger'\"\n  [class.btn-ghost]=\"variant === 'ghost'\"\n  [class.btn-icon]=\"icon\"\n  [class.is-hover]=\"hover\"\n  [attr.type]=\"type\"\n  [attr.aria-label]=\"ariaLabel || null\"\n  [disabled]=\"disabled\">\n  <ng-content />\n</button>\n"
+        },
+        {
+            "name": "CalendarComponent",
+            "id": "component-CalendarComponent-71a07432da71b337f9faacacca0b51547c000501dcb944a1aa1234746d8d1bf377de74688c9a5ee8c0b105f338ae32a30cd6cb5f31476d2a8aef8213fd9f6a6b",
+            "file": "src/app/components/calendar/calendar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-calendar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./calendar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "events",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "number[]",
+                    "decorators": []
+                },
+                {
+                    "name": "selected",
+                    "defaultValue": "12",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'Junho 2026'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "today",
+                    "defaultValue": "12",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "days",
+                    "defaultValue": "[\n    { label: '31', muted: true },\n    ...Array.from({ length: 30 }, (_, index) => ({ label: String(index + 1) })),\n    { label: '1', muted: true },\n    { label: '2', muted: true },\n    { label: '3', muted: true },\n    { label: '4', muted: true },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CalendarDay[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "weekdays",
+                    "defaultValue": "['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 19,
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "hasEvent",
+                    "args": [
+                        {
+                            "name": "day",
+                            "type": "CalendarDay",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "day",
+                            "type": "CalendarDay",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "select",
+                    "args": [
+                        {
+                            "name": "day",
+                            "type": "CalendarDay",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "day",
+                            "type": "CalendarDay",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ninterface CalendarDay {\n  label: string;\n  muted?: boolean;\n}\n\n@Component({\n  selector: 'app-calendar',\n  templateUrl: './calendar.component.html',\n  styleUrl: './calendar.component.css',\n})\nexport class CalendarComponent {\n  @Input() title = 'Junho 2026';\n  @Input() today = 12;\n  @Input() selected = 12;\n  @Input() events: number[] = [];\n\n  readonly weekdays = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'];\n  readonly days: CalendarDay[] = [\n    { label: '31', muted: true },\n    ...Array.from({ length: 30 }, (_, index) => ({ label: String(index + 1) })),\n    { label: '1', muted: true },\n    { label: '2', muted: true },\n    { label: '3', muted: true },\n    { label: '4', muted: true },\n  ];\n\n  select(day: CalendarDay): void {\n    if (!day.muted) {\n      this.selected = Number(day.label);\n    }\n  }\n\n  hasEvent(day: CalendarDay): boolean {\n    return !day.muted && this.events.includes(Number(day.label));\n  }\n}\n",
+            "styleUrl": "./calendar.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<section class=\"calendar\" aria-label=\"Calendario mensal\">\n  <div class=\"calendar-header\">\n    <h3 class=\"calendar-title\">{{ title }}</h3>\n    <div class=\"calendar-controls\">\n      <button class=\"icon-btn\" type=\"button\" aria-label=\"Mes anterior\">&lsaquo;</button>\n      <button class=\"icon-btn\" type=\"button\" aria-label=\"Proximo mes\">&rsaquo;</button>\n    </div>\n  </div>\n\n  <div class=\"calendar-grid\">\n    @for (weekday of weekdays; track weekday) {\n      <span class=\"calendar-weekday\">{{ weekday }}</span>\n    }\n\n    @for (day of days; track day.label + day.muted) {\n      <button\n        class=\"calendar-day\"\n        type=\"button\"\n        [class.is-muted]=\"day.muted\"\n        [class.is-today]=\"!day.muted && +day.label === today\"\n        [class.is-selected]=\"!day.muted && +day.label === selected\"\n        [class.has-event]=\"hasEvent(day)\"\n        (click)=\"select(day)\">\n        {{ day.label }}\n      </button>\n    }\n  </div>\n</section>\n"
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-2061e5fadde8188f8404c6893a33af3f96449acac27f5ecbb81fe8dea018716ce48557ddd751ecb59dee13e812f859280ee9060f2c840eb813dd832e818099bd",
+            "file": "src/app/components/card/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "action",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "badge",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "badgeVariant",
+                    "defaultValue": "'info'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "BadgeVariant",
+                    "decorators": []
+                },
+                {
+                    "name": "href",
+                    "defaultValue": "'#'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "CardVariant",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "BadgeComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { BadgeComponent } from '../badge/badge.component';\n\ntype CardVariant = 'default' | 'active' | 'dark';\ntype BadgeVariant = 'success' | 'warning' | 'danger' | 'info';\n\n@Component({\n  selector: 'app-card',\n  imports: [BadgeComponent],\n  templateUrl: './card.component.html',\n  styleUrl: './card.component.css',\n})\nexport class CardComponent {\n  @Input() title = '';\n  @Input() action = '';\n  @Input() href = '#';\n  @Input() variant: CardVariant = 'default';\n  @Input() badge = '';\n  @Input() badgeVariant: BadgeVariant = 'info';\n}\n",
+            "styleUrl": "./card.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<article class=\"card\" [class.is-active]=\"variant === 'active'\" [class.is-dark]=\"variant === 'dark'\">\n  @if (badge) {\n    <app-badge [variant]=\"badgeVariant\">{{ badge }}</app-badge>\n  }\n  @if (title) {\n    <h3>{{ title }}</h3>\n  }\n  <p><ng-content /></p>\n  @if (action) {\n    <a [href]=\"href\">{{ action }} &rarr;</a>\n  }\n</article>\n"
+        },
+        {
+            "name": "DesignSystemPageComponent",
+            "id": "component-DesignSystemPageComponent-aae21db60c96648f57b6552b87ef4534263c3b019095826a9a918573241dd7c245349463e93bd48cd6ec74916c637be28460c33468e28c4cd87a58a730dff886",
+            "file": "src/app/pages/design-system/design-system-page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-design-system-page",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./design-system-page.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "appNav",
+                    "defaultValue": "['Dashboard', 'Clientes', 'Projetos', 'Tarefas', 'Relatorios']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 55,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "buttonGroups",
+                    "defaultValue": "[\n    {\n      title: 'Acoes principais',\n      examples: [\n        { name: 'Primario', usage: 'Acao principal da tela', variant: 'primary' },\n        { name: 'Primario hover', usage: 'Estado de hover', variant: 'primary', hover: true },\n        { name: 'Primario disabled', usage: 'Acao indisponivel', variant: 'primary', disabled: true },\n      ],\n    },\n    {\n      title: 'Acoes secundarias',\n      examples: [\n        { name: 'Secundario', usage: 'Acao complementar', variant: 'secondary' },\n        { name: 'Secundario hover', usage: 'Estado de hover', variant: 'secondary', hover: true },\n        { name: 'Fantasma', usage: 'Acao discreta em barras e tabelas', variant: 'ghost' },\n      ],\n    },\n    {\n      title: 'Acoes criticas e compactas',\n      examples: [\n        { name: 'Perigo', usage: 'Excluir ou cancelar fluxo', variant: 'danger' },\n        { name: 'Icone', usage: 'Acao compacta sem texto', variant: 'primary', icon: true, label: '>' },\n        { name: 'Mais acoes', usage: 'Menu contextual', variant: 'ghost', icon: true, label: '...' },\n      ],\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ButtonShowcaseGroup[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 90,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "docsNav",
+                    "defaultValue": "['Tokens', 'Como usar', 'Botoes', 'Formularios', 'Cards e navegacao', 'Calendario', 'Padroes']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 52,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "eventDays",
+                    "defaultValue": "[4, 8, 12, 16, 24]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 56,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "statusOptions",
+                    "defaultValue": "['Ativo', 'Pendente', 'Inativo']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 57,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "steps",
+                    "defaultValue": "['Informacoes', 'Detalhes', 'Revisao', 'Conclusao']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 54,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "tabs",
+                    "defaultValue": "['Visao geral', 'Clientes', 'Projetos', 'Financeiro', 'Configuracoes']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 53,
+                    "modifierKind": [
+                        148
+                    ]
+                },
+                {
+                    "name": "usageDocs",
+                    "defaultValue": "[\n    {\n      title: 'Header e footer',\n      description: 'Use para abrir e fechar paginas mantendo a marca MAL consistente.',\n      code: '<app-header title=\"MAL Design System\" />\\n<app-footer />',\n    },\n    {\n      title: 'Botao',\n      description: 'Use variants nomeadas e mantenha o tamanho padrao do sistema.',\n      code: '<app-button variant=\"primary\">Salvar</app-button>',\n    },\n    {\n      title: 'Sidebar',\n      description: 'Use em layouts de produto com navegacao lateral.',\n      code: '<app-sidebar [items]=\"menu\" [activeIndex]=\"0\" />',\n    },\n    {\n      title: 'Formularios',\n      description: 'Use text-field para input, select e textarea com o mesmo visual.',\n      code: '<app-text-field label=\"Nome\" placeholder=\"Digite o nome\" />',\n    },\n    {\n      title: 'Cards e badges',\n      description: 'Use para blocos de conteudo, estados e destaques.',\n      code: '<app-card title=\"Plano\" badge=\"Novo\">Texto</app-card>',\n    },\n    {\n      title: 'Calendario',\n      description: 'Use para agendas, prazos e eventos.',\n      code: '<app-calendar [events]=\"[4, 8, 12]\" />',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 58,
+                    "modifierKind": [
+                        148
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "BadgeComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CalendarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "EventCardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "FooterComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "MetricCardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "SidebarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "StepperComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TabsComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TextFieldComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { BadgeComponent } from '../../components/badge/badge.component';\nimport { ButtonComponent } from '../../components/button/button.component';\nimport { CalendarComponent } from '../../components/calendar/calendar.component';\nimport { CardComponent } from '../../components/card/card.component';\nimport { EventCardComponent } from '../../components/event-card/event-card.component';\nimport { FooterComponent } from '../../components/footer/footer.component';\nimport { HeaderComponent } from '../../components/header/header.component';\nimport { MetricCardComponent } from '../../components/metric-card/metric-card.component';\nimport { SidebarComponent } from '../../components/sidebar/sidebar.component';\nimport { StepperComponent } from '../../components/stepper/stepper.component';\nimport { TabsComponent } from '../../components/tabs/tabs.component';\nimport { TextFieldComponent } from '../../components/text-field/text-field.component';\n\ntype ButtonShowcaseVariant = 'primary' | 'secondary' | 'danger' | 'ghost';\n\ninterface ButtonShowcaseExample {\n  name: string;\n  usage: string;\n  variant: ButtonShowcaseVariant;\n  hover?: boolean;\n  disabled?: boolean;\n  icon?: boolean;\n  label?: string;\n}\n\ninterface ButtonShowcaseGroup {\n  title: string;\n  examples: ButtonShowcaseExample[];\n}\n\n@Component({\n  selector: 'app-design-system-page',\n  imports: [\n    BadgeComponent,\n    ButtonComponent,\n    CalendarComponent,\n    CardComponent,\n    EventCardComponent,\n    FooterComponent,\n    HeaderComponent,\n    MetricCardComponent,\n    SidebarComponent,\n    StepperComponent,\n    TabsComponent,\n    TextFieldComponent,\n  ],\n  templateUrl: './design-system-page.component.html',\n  styleUrl: './design-system-page.component.css',\n})\nexport class DesignSystemPageComponent {\n  readonly docsNav = ['Tokens', 'Como usar', 'Botoes', 'Formularios', 'Cards e navegacao', 'Calendario', 'Padroes'];\n  readonly tabs = ['Visao geral', 'Clientes', 'Projetos', 'Financeiro', 'Configuracoes'];\n  readonly steps = ['Informacoes', 'Detalhes', 'Revisao', 'Conclusao'];\n  readonly appNav = ['Dashboard', 'Clientes', 'Projetos', 'Tarefas', 'Relatorios'];\n  readonly eventDays = [4, 8, 12, 16, 24];\n  readonly statusOptions = ['Ativo', 'Pendente', 'Inativo'];\n  readonly usageDocs = [\n    {\n      title: 'Header e footer',\n      description: 'Use para abrir e fechar paginas mantendo a marca MAL consistente.',\n      code: '<app-header title=\"MAL Design System\" />\\n<app-footer />',\n    },\n    {\n      title: 'Botao',\n      description: 'Use variants nomeadas e mantenha o tamanho padrao do sistema.',\n      code: '<app-button variant=\"primary\">Salvar</app-button>',\n    },\n    {\n      title: 'Sidebar',\n      description: 'Use em layouts de produto com navegacao lateral.',\n      code: '<app-sidebar [items]=\"menu\" [activeIndex]=\"0\" />',\n    },\n    {\n      title: 'Formularios',\n      description: 'Use text-field para input, select e textarea com o mesmo visual.',\n      code: '<app-text-field label=\"Nome\" placeholder=\"Digite o nome\" />',\n    },\n    {\n      title: 'Cards e badges',\n      description: 'Use para blocos de conteudo, estados e destaques.',\n      code: '<app-card title=\"Plano\" badge=\"Novo\">Texto</app-card>',\n    },\n    {\n      title: 'Calendario',\n      description: 'Use para agendas, prazos e eventos.',\n      code: '<app-calendar [events]=\"[4, 8, 12]\" />',\n    },\n  ];\n  readonly buttonGroups: ButtonShowcaseGroup[] = [\n    {\n      title: 'Acoes principais',\n      examples: [\n        { name: 'Primario', usage: 'Acao principal da tela', variant: 'primary' },\n        { name: 'Primario hover', usage: 'Estado de hover', variant: 'primary', hover: true },\n        { name: 'Primario disabled', usage: 'Acao indisponivel', variant: 'primary', disabled: true },\n      ],\n    },\n    {\n      title: 'Acoes secundarias',\n      examples: [\n        { name: 'Secundario', usage: 'Acao complementar', variant: 'secondary' },\n        { name: 'Secundario hover', usage: 'Estado de hover', variant: 'secondary', hover: true },\n        { name: 'Fantasma', usage: 'Acao discreta em barras e tabelas', variant: 'ghost' },\n      ],\n    },\n    {\n      title: 'Acoes criticas e compactas',\n      examples: [\n        { name: 'Perigo', usage: 'Excluir ou cancelar fluxo', variant: 'danger' },\n        { name: 'Icone', usage: 'Acao compacta sem texto', variant: 'primary', icon: true, label: '>' },\n        { name: 'Mais acoes', usage: 'Menu contextual', variant: 'ghost', icon: true, label: '...' },\n      ],\n    },\n  ];\n}\n",
+            "styleUrl": "./design-system-page.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"presentation-shell\">\n  <app-header\n    class=\"presentation-header\"\n    title=\"MAL Design System\"\n    tagline=\"Biblioteca Angular com componentes reutilizaveis.\">\n    <app-badge variant=\"success\">Angular</app-badge>\n  </app-header>\n\n  <main class=\"page\">\n    <aside class=\"brand-panel\">\n      <section class=\"panel-block\">\n        <p class=\"eyebrow\">Navegacao</p>\n        <nav class=\"nav-list\" aria-label=\"Secoes do design system\">\n          @for (item of docsNav; track item; let index = $index) {\n            <a href=\"#\" [class.is-active]=\"index === 0\">{{ item }}</a>\n          }\n        </nav>\n      </section>\n\n      <section class=\"panel-block\">\n        <p class=\"eyebrow\">Logos em public</p>\n        <div class=\"logo-assets\">\n          <a class=\"logo-asset logo-asset-light\" href=\"/logo-mal-azul.png\" target=\"_blank\">\n            <img src=\"/logo-mal-azul.png\" alt=\"Logo MAL azul\" />\n            <span>logo-mal-azul.png</span>\n          </a>\n          <a class=\"logo-asset logo-asset-dark\" href=\"/logo-mal-branca.png\" target=\"_blank\">\n            <img src=\"/logo-mal-branca.png\" alt=\"Logo MAL branca\" />\n            <span>logo-mal-branca.png</span>\n          </a>\n        </div>\n      </section>\n    </aside>\n\n    <section class=\"content\">\n      <section class=\"ds-section\">\n        <div class=\"section-header\">\n          <div>\n            <p class=\"eyebrow\">01 / Fundacao</p>\n            <h2>Tokens de identidade</h2>\n            <p>Cores, tipografia, espacamentos, raios e sombras centralizados em <code>src/styles.css</code>.</p>\n          </div>\n          <app-badge variant=\"success\">Reutilizavel</app-badge>\n        </div>\n\n        <div class=\"token-grid\">\n          <div class=\"swatch\">\n            <span class=\"swatch-color\" style=\"background:#7cb518\"></span>\n            <span class=\"token-name\">Primary</span>\n            <span class=\"token-value\">--mal-primary / #7CB518</span>\n          </div>\n          <div class=\"swatch\">\n            <span class=\"swatch-color\" style=\"background:#14215d\"></span>\n            <span class=\"token-name\">Secondary</span>\n            <span class=\"token-value\">--mal-secondary / #14215D</span>\n          </div>\n          <div class=\"swatch\">\n            <span class=\"swatch-color\" style=\"background:#0d1f3c\"></span>\n            <span class=\"token-name\">Navy</span>\n            <span class=\"token-value\">--mal-navy / #0D1F3C</span>\n          </div>\n          <div class=\"swatch\">\n            <span class=\"swatch-color\" style=\"background:#f3f4f6\"></span>\n            <span class=\"token-name\">Background</span>\n            <span class=\"token-value\">--color-bg / #F3F4F6</span>\n          </div>\n        </div>\n\n        <div class=\"type-row token-type\">\n          <div class=\"type-display\">Ag</div>\n          <p class=\"muted\">Space Grotesk para marca e titulos. Inter para textos e interfaces.</p>\n        </div>\n      </section>\n\n      <section class=\"ds-section\">\n        <div class=\"section-header\">\n          <div>\n            <p class=\"eyebrow\">02 / Como usar</p>\n            <h2>Uso dos componentes</h2>\n            <p>Cada componente tem uma tag Angular propria, entradas por atributo e tamanho visual padronizado.</p>\n          </div>\n        </div>\n\n        <div class=\"usage-grid\">\n          @for (doc of usageDocs; track doc.title) {\n            <article class=\"usage-card\">\n              <h3>{{ doc.title }}</h3>\n              <p>{{ doc.description }}</p>\n              <pre><code>{{ doc.code }}</code></pre>\n            </article>\n          }\n        </div>\n      </section>\n\n      <section class=\"ds-section\">\n        <div class=\"section-header\">\n          <div>\n            <p class=\"eyebrow\">03 / Componentes</p>\n            <h2>Tipos de botoes nomeados</h2>\n            <p>Todos usam altura, largura minima e raio padrao definidos no design system.</p>\n          </div>\n        </div>\n\n        <div class=\"button-group-grid\">\n          @for (group of buttonGroups; track group.title) {\n            <section class=\"component-panel\">\n              <h3>{{ group.title }}</h3>\n              <div class=\"button-list\">\n                @for (button of group.examples; track button.name) {\n                  <article class=\"button-row\">\n                    <div>\n                      <strong>{{ button.name }}</strong>\n                      <span>{{ button.usage }}</span>\n                    </div>\n                    <app-button\n                      [variant]=\"button.variant\"\n                      [hover]=\"button.hover || false\"\n                      [disabled]=\"button.disabled || false\"\n                      [icon]=\"button.icon || false\"\n                      [ariaLabel]=\"button.name\">\n                      {{ button.label || button.name }}\n                    </app-button>\n                  </article>\n                }\n              </div>\n            </section>\n          }\n        </div>\n      </section>\n\n      <section class=\"ds-section\">\n        <div class=\"section-header\">\n          <div>\n            <p class=\"eyebrow\">04 / Entrada de dados</p>\n            <h2>Inputs e formularios</h2>\n            <p>Use <code>app-text-field</code> para input, select e textarea com o mesmo padrao visual.</p>\n          </div>\n        </div>\n\n        <div class=\"form-grid\">\n          <app-text-field label=\"Nome completo\" placeholder=\"Digite o nome\" hint=\"Use nome e sobrenome.\" />\n          <app-text-field label=\"Status\" kind=\"select\" placeholder=\"Selecione o status\" [options]=\"statusOptions\" />\n          <app-text-field label=\"E-mail\" value=\"email-sem-dominio\" hint=\"Informe um e-mail valido.\" [invalid]=\"true\" />\n          <app-text-field label=\"Campo desabilitado\" placeholder=\"Indisponivel\" [disabled]=\"true\" />\n          <app-text-field class=\"form-wide\" label=\"Observacoes\" kind=\"textarea\" placeholder=\"Descreva o contexto do projeto\" />\n        </div>\n      </section>\n\n      <section class=\"ds-section\">\n        <div class=\"section-header\">\n          <div>\n            <p class=\"eyebrow\">05 / Conteudo</p>\n            <h2>Cards, badges, tabs e stepper</h2>\n            <p>Os cards estao separados por tipo para leitura rapida na apresentacao.</p>\n          </div>\n        </div>\n\n        <div class=\"split-showcase\">\n          <section class=\"component-panel\">\n            <h3>Cards informativos</h3>\n            <div class=\"card-grid card-grid-split\">\n              <app-card title=\"Card padrao\" badge=\"Base\" badgeVariant=\"info\" action=\"Saiba mais\">\n                Para informacoes curtas com uma acao complementar.\n              </app-card>\n              <app-card title=\"Card destacado\" variant=\"active\" badge=\"Novo\" badgeVariant=\"success\" action=\"Acao principal\">\n                Usado quando uma opcao precisa ganhar prioridade visual.\n              </app-card>\n            </div>\n          </section>\n\n          <section class=\"component-panel\">\n            <h3>Card institucional</h3>\n            <app-card title=\"Card escuro\" variant=\"dark\" badge=\"Premium\" badgeVariant=\"warning\" action=\"Ver detalhes\">\n              Boa opcao para planos, alertas de marca ou features especiais.\n            </app-card>\n          </section>\n        </div>\n\n        <section class=\"component-panel component-panel-spaced\">\n          <h3>Navegacao e progresso</h3>\n          <app-tabs [items]=\"tabs\" [activeIndex]=\"0\" />\n          <app-stepper [steps]=\"steps\" [activeIndex]=\"0\" />\n        </section>\n      </section>\n\n      <section class=\"ds-section\">\n        <div class=\"section-header\">\n          <div>\n            <p class=\"eyebrow\">06 / Agenda</p>\n            <h2>Calendario e eventos</h2>\n            <p>Use para agendas, prazos e marcos de projeto.</p>\n          </div>\n          <app-button variant=\"primary\">Novo evento</app-button>\n        </div>\n\n        <div class=\"calendar-shell\">\n          <app-calendar title=\"Junho 2026\" [today]=\"12\" [selected]=\"12\" [events]=\"eventDays\" />\n          <aside class=\"agenda\">\n            <app-event-card time=\"Hoje, 09:00\" title=\"Reuniao de discovery\">\n              Alinhamento com cliente enterprise.\n            </app-event-card>\n            <app-event-card variant=\"info\" time=\"Hoje, 14:30\" title=\"Entrega do prototipo\">\n              Revisao de telas e componentes.\n            </app-event-card>\n            <app-event-card variant=\"warning\" time=\"16 Jun, 10:00\" title=\"Fechamento financeiro\">\n              Conferir pendencias e notas.\n            </app-event-card>\n          </aside>\n        </div>\n      </section>\n\n      <section class=\"ds-section\">\n        <div class=\"section-header\">\n          <div>\n            <p class=\"eyebrow\">07 / Padroes</p>\n            <h2>Layouts prontos para reaproveitar</h2>\n            <p>Composicao de sidebar, dashboard, formulario e tabela usando os componentes.</p>\n          </div>\n        </div>\n\n        <section class=\"layout-grid\">\n          <app-sidebar [items]=\"appNav\" [activeIndex]=\"0\" />\n\n          <section class=\"surface dashboard\">\n            <h2>Dashboard</h2>\n            <div class=\"metric-grid\">\n              <app-metric-card label=\"Receita\" value=\"R$ 25.430\" trend=\"+12,5%\" />\n              <app-metric-card label=\"Projetos\" value=\"18\" trend=\"+8,1%\" />\n              <app-metric-card label=\"Tarefas\" value=\"32\" trend=\"-4,3%\" direction=\"down\" />\n            </div>\n            <div class=\"chart-card\">\n              <h3>Desempenho</h3>\n              <div class=\"fake-chart\" aria-hidden=\"true\"></div>\n            </div>\n          </section>\n        </section>\n\n        <section class=\"layout-grid pattern-spacer\">\n          <form class=\"form-card\">\n            <h2>Novo cliente</h2>\n            <app-text-field label=\"Nome completo\" placeholder=\"Digite o nome\" />\n            <app-text-field label=\"E-mail\" placeholder=\"email@exemplo.com\" />\n            <app-text-field label=\"Segmento\" kind=\"select\" placeholder=\"Selecione o segmento\" [options]=\"statusOptions\" />\n            <div class=\"actions\">\n              <app-button variant=\"secondary\">Cancelar</app-button>\n              <app-button variant=\"primary\" type=\"submit\">Salvar</app-button>\n            </div>\n          </form>\n\n          <div class=\"table-card\">\n            <h2>Tabela</h2>\n            <div class=\"table-wrap\">\n              <table>\n                <thead>\n                  <tr>\n                    <th>Cliente</th>\n                    <th>E-mail</th>\n                    <th>Status</th>\n                    <th>Acoes</th>\n                  </tr>\n                </thead>\n                <tbody>\n                  <tr>\n                    <td>ACME Ltda</td>\n                    <td>contato@acme.com</td>\n                    <td><app-badge variant=\"success\">Ativo</app-badge></td>\n                    <td><app-button variant=\"ghost\" [icon]=\"true\" ariaLabel=\"Mais acoes\">...</app-button></td>\n                  </tr>\n                  <tr>\n                    <td>Startup XYZ</td>\n                    <td>oi@xyz.com</td>\n                    <td><app-badge variant=\"warning\">Pendente</app-badge></td>\n                    <td><app-button variant=\"ghost\" [icon]=\"true\" ariaLabel=\"Mais acoes\">...</app-button></td>\n                  </tr>\n                  <tr>\n                    <td>Design Studio</td>\n                    <td>hello@studio.com</td>\n                    <td><app-badge variant=\"danger\">Inativo</app-badge></td>\n                    <td><app-button variant=\"ghost\" [icon]=\"true\" ariaLabel=\"Mais acoes\">...</app-button></td>\n                  </tr>\n                </tbody>\n              </table>\n            </div>\n          </div>\n        </section>\n      </section>\n    </section>\n  </main>\n\n  <app-footer />\n</div>\n"
+        },
+        {
+            "name": "EventCardComponent",
+            "id": "component-EventCardComponent-d3382d3cfaa09cf1239f91377817fa0a9ac920170c6feb8b2e97658e3aa4bf026d7951914de5847a4279b389ed6533285ad15aab04b0f80c3f7663d3515e84d2",
+            "file": "src/app/components/event-card/event-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-event-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./event-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "time",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventVariant",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype EventVariant = 'default' | 'info' | 'warning';\n\n@Component({\n  selector: 'app-event-card',\n  templateUrl: './event-card.component.html',\n  styleUrl: './event-card.component.css',\n})\nexport class EventCardComponent {\n  @Input() time = '';\n  @Input() title = '';\n  @Input() variant: EventVariant = 'default';\n}\n",
+            "styleUrl": "./event-card.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<article\n  class=\"calendar-event\"\n  [class.is-info]=\"variant === 'info'\"\n  [class.is-warning]=\"variant === 'warning'\">\n  <time>{{ time }}</time>\n  <strong>{{ title }}</strong>\n  <span class=\"muted\"><ng-content /></span>\n</article>\n"
+        },
+        {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-1f5692127dd2b50933a82c1b90c2a58010fa1465aebf085bb2a73dfef241eb0b332c78bb3a7179fd5e6a4fe46849dd351a926b0e19210277c26ae27d4c25044b",
+            "file": "src/app/components/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-footer",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "text",
+                    "defaultValue": "'MAL Design System'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-footer',\n  templateUrl: './footer.component.html',\n  styleUrl: './footer.component.css',\n})\nexport class FooterComponent {\n  @Input() text = 'MAL Design System';\n}\n",
+            "styleUrl": "./footer.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<footer class=\"app-footer\">\n  <span>{{ text }}</span>\n  <span>Tokens, componentes e padroes reutilizaveis.</span>\n</footer>\n"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-6ffddc3fe48e2ccedb9c610462374a8ad25c95028fc4bcfe4f8ecfef0b316d33315effa34c28abe6c7f1ee5cae345c19d9b094c330345634b321f3965fa72dc8",
+            "file": "src/app/components/header/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-header",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./header.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "logoSrc",
+                    "defaultValue": "'/logo-mal-azul.png'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "tagline",
+                    "defaultValue": "'tecnologia sob medida'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'MAL'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-header',\n  templateUrl: './header.component.html',\n  styleUrl: './header.component.css',\n})\nexport class HeaderComponent {\n  @Input() title = 'MAL';\n  @Input() tagline = 'tecnologia sob medida';\n  @Input() logoSrc = '/logo-mal-azul.png';\n}\n",
+            "styleUrl": "./header.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<header class=\"app-header\">\n  <div class=\"header-brand\">\n    <img class=\"header-logo\" [src]=\"logoSrc\" alt=\"Logo MAL\" />\n    <div>\n      <h1>{{ title }}</h1>\n      <small>{{ tagline }}</small>\n    </div>\n  </div>\n  <div class=\"header-actions\">\n    <ng-content />\n  </div>\n</header>\n"
+        },
+        {
+            "name": "LogoComponent",
+            "id": "component-LogoComponent-4944015263448abff24cc338456640088347ff07e7d0b7f46399442a7bc7566fc1c57ba9c06a53b08d6da6719a25a97dbbfed5fe0eda990d49805981acb2bd96",
+            "file": "src/app/components/logo/logo.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-logo",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./logo.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "size",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "\"default\" | \"small\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-logo',\n  templateUrl: './logo.component.html',\n  styleUrl: './logo.component.css',\n})\nexport class LogoComponent {\n  @Input() size: 'default' | 'small' = 'default';\n}\n",
+            "styleUrl": "./logo.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<span class=\"logo-mark\" [class.is-small]=\"size === 'small'\" aria-hidden=\"true\"></span>\n"
+        },
+        {
+            "name": "MetricCardComponent",
+            "id": "component-MetricCardComponent-e0124af5b40ada0fac0b3e628c2a78925c567d1f7f8310f4e6be4cfa99d09b38734750df06aa95164b681fb071adf949de7157ae82b99dd30692555b9e923621",
+            "file": "src/app/components/metric-card/metric-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-metric-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./metric-card.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "direction",
+                    "defaultValue": "'up'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "\"up\" | \"down\"",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "trend",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-metric-card',\n  templateUrl: './metric-card.component.html',\n  styleUrl: './metric-card.component.css',\n})\nexport class MetricCardComponent {\n  @Input() label = '';\n  @Input() value = '';\n  @Input() trend = '';\n  @Input() direction: 'up' | 'down' = 'up';\n}\n",
+            "styleUrl": "./metric-card.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"metric\">\n  <span class=\"metric-label\">{{ label }}</span>\n  <h3>{{ value }}</h3>\n  <span class=\"metric-trend\" [class.is-down]=\"direction === 'down'\">{{ trend }}</span>\n</div>\n"
+        },
+        {
+            "name": "SidebarComponent",
+            "id": "component-SidebarComponent-9f17adeaabf64a8ec2e2ca8966620463271cb2426157031222e60f8a3aac353bc18c1f3dbbbf706a66c328751d9da3ccc255ec849f5a08df591e2b0b1ae7c4d4",
+            "file": "src/app/components/sidebar/sidebar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./sidebar.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "activeIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "branded",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [
+                {
+                    "name": "LogoComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { LogoComponent } from '../logo/logo.component';\n\n@Component({\n  selector: 'app-sidebar',\n  imports: [LogoComponent],\n  templateUrl: './sidebar.component.html',\n  styleUrl: './sidebar.component.css',\n})\nexport class SidebarComponent {\n  @Input() items: string[] = [];\n  @Input() activeIndex = 0;\n  @Input() branded = true;\n}\n",
+            "styleUrl": "./sidebar.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<aside class=\"sidebar\">\n  @if (branded) {\n    <div class=\"brand\">\n      <app-logo size=\"small\" />\n      <strong>MAL</strong>\n    </div>\n  }\n\n  @for (item of items; track item; let index = $index) {\n    <a class=\"side-link\" [class.is-active]=\"index === activeIndex\" href=\"#\">{{ item }}</a>\n  }\n</aside>\n"
+        },
+        {
+            "name": "StepperComponent",
+            "id": "component-StepperComponent-66311b5c56b09cdfad08cc1d2ad507763dd56da1358ebd09d54d98a3200497e4c46c3b07f0c87f7ee4a3a29b57e13aa48bee0fee0bd963b258b743722a3601cc",
+            "file": "src/app/components/stepper/stepper.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-stepper",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./stepper.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "activeIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "steps",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-stepper',\n  templateUrl: './stepper.component.html',\n  styleUrl: './stepper.component.css',\n})\nexport class StepperComponent {\n  @Input() steps: string[] = [];\n  @Input() activeIndex = 0;\n}\n",
+            "styleUrl": "./stepper.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"stepper\">\n  @for (step of steps; track step; let index = $index) {\n    @if (index > 0) {\n      <div class=\"step-line\"></div>\n    }\n    <div class=\"step\" [class.is-active]=\"index === activeIndex\">\n      <span class=\"step-marker\">{{ index + 1 }}</span>\n      <span class=\"muted\">{{ step }}</span>\n    </div>\n  }\n</div>\n"
+        },
+        {
+            "name": "TabsComponent",
+            "id": "component-TabsComponent-f176cfc46a102545bd2049ff7872616d180d7c9fbe0434e5b1c2d5fb7b9be1f9191dd23540be5f2c5bf6b0ff8e4faeedc1e4b315083dc91a6e78f2ad77e7fb3c",
+            "file": "src/app/components/tabs/tabs.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tabs",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./tabs.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "activeIndex",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "select",
+                    "args": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 12,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "index",
+                            "type": "number",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-tabs',\n  templateUrl: './tabs.component.html',\n  styleUrl: './tabs.component.css',\n})\nexport class TabsComponent {\n  @Input() items: string[] = [];\n  @Input() activeIndex = 0;\n\n  select(index: number): void {\n    this.activeIndex = index;\n  }\n}\n",
+            "styleUrl": "./tabs.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<nav class=\"tabs\" aria-label=\"Abas\">\n  @for (item of items; track item; let index = $index) {\n    <button class=\"tab\" type=\"button\" [class.is-active]=\"index === activeIndex\" (click)=\"select(index)\">\n      {{ item }}\n    </button>\n  }\n</nav>\n"
+        },
+        {
+            "name": "TextFieldComponent",
+            "id": "component-TextFieldComponent-b65da3ead9ddd82646b6736051bc83907823aa3ed26f7affe62e47b047ce4ff82af3c2b047c49338d87a575a02def6883bb260f4a8f535d7d78f89ea74594549",
+            "file": "src/app/components/text-field/text-field.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-text-field",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./text-field.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "hint",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "invalid",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "kind",
+                    "defaultValue": "'input'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "FieldKind",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string[]",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": false,
+            "imports": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\ntype FieldKind = 'input' | 'textarea' | 'select';\n\n@Component({\n  selector: 'app-text-field',\n  templateUrl: './text-field.component.html',\n  styleUrl: './text-field.component.css',\n})\nexport class TextFieldComponent {\n  @Input() label = '';\n  @Input() placeholder = '';\n  @Input() value = '';\n  @Input() hint = '';\n  @Input() type = 'text';\n  @Input() kind: FieldKind = 'input';\n  @Input() options: string[] = [];\n  @Input() disabled = false;\n  @Input() invalid = false;\n}\n",
+            "styleUrl": "./text-field.component.css",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<label class=\"input-group\">\n  <span>{{ label }}</span>\n\n  @if (kind === 'textarea') {\n    <textarea class=\"textarea\" [placeholder]=\"placeholder\" [disabled]=\"disabled\">{{ value }}</textarea>\n  } @else if (kind === 'select') {\n    <select class=\"input\" [disabled]=\"disabled\" [class.is-invalid]=\"invalid\">\n      <option>{{ placeholder }}</option>\n      @for (option of options; track option) {\n        <option>{{ option }}</option>\n      }\n    </select>\n  } @else {\n    <input\n      class=\"input\"\n      [type]=\"type\"\n      [placeholder]=\"placeholder\"\n      [value]=\"value\"\n      [disabled]=\"disabled\"\n      [class.is-invalid]=\"invalid\" />\n  }\n\n  @if (hint) {\n    <span class=\"field-hint\">{{ hint }}</span>\n  }\n</label>\n"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    \n  ]\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "BadgeVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"success\" | \"warning\" | \"danger\" | \"info\"",
+                "file": "src/app/components/card/card.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "BadgeVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"success\" | \"warning\" | \"danger\" | \"info\"",
+                "file": "src/app/components/badge/badge.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ButtonShowcaseVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"secondary\" | \"danger\" | \"ghost\"",
+                "file": "src/app/pages/design-system/design-system-page.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ButtonType",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                "file": "src/app/components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "ButtonVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"primary\" | \"secondary\" | \"danger\" | \"ghost\"",
+                "file": "src/app/components/button/button.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "CardVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"default\" | \"active\" | \"dark\"",
+                "file": "src/app/components/card/card.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "EventVariant",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"default\" | \"info\" | \"warning\"",
+                "file": "src/app/components/event-card/event-card.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            },
+            {
+                "name": "FieldKind",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "\"input\" | \"textarea\" | \"select\"",
+                "file": "src/app/components/text-field/text-field.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\n  providers: [\n    provideBrowserGlobalErrorListeners(),\n    \n  ]\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "src/app/components/card/card.component.ts": [
+                {
+                    "name": "BadgeVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"success\" | \"warning\" | \"danger\" | \"info\"",
+                    "file": "src/app/components/card/card.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "CardVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"default\" | \"active\" | \"dark\"",
+                    "file": "src/app/components/card/card.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/app/components/badge/badge.component.ts": [
+                {
+                    "name": "BadgeVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"success\" | \"warning\" | \"danger\" | \"info\"",
+                    "file": "src/app/components/badge/badge.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/app/pages/design-system/design-system-page.component.ts": [
+                {
+                    "name": "ButtonShowcaseVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"secondary\" | \"danger\" | \"ghost\"",
+                    "file": "src/app/pages/design-system/design-system-page.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/app/components/button/button.component.ts": [
+                {
+                    "name": "ButtonType",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"button\" | \"submit\" | \"reset\"",
+                    "file": "src/app/components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                },
+                {
+                    "name": "ButtonVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"primary\" | \"secondary\" | \"danger\" | \"ghost\"",
+                    "file": "src/app/components/button/button.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/app/components/event-card/event-card.component.ts": [
+                {
+                    "name": "EventVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"default\" | \"info\" | \"warning\"",
+                    "file": "src/app/components/event-card/event-card.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
+            "src/app/components/text-field/text-field.component.ts": [
+                {
+                    "name": "FieldKind",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"input\" | \"textarea\" | \"select\"",
+                    "file": "src/app/components/text-field/text-field.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": []
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "App",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/badge/badge.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BadgeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/badge/badge.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "BadgeVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonType",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/calendar/calendar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CalendarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/calendar/calendar.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CalendarDay",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "BadgeVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card/card.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "CardVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/event-card/event-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EventCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/event-card/event-card.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "EventVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/header/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/logo/logo.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LogoComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/metric-card/metric-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MetricCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/sidebar/sidebar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/stepper/stepper.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "StepperComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/tabs/tabs.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TabsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/text-field/text-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TextFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/text-field/text-field.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "FieldKind",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/design-system/design-system-page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DesignSystemPageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/design-system/design-system-page.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ButtonShowcaseExample",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/design-system/design-system-page.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ButtonShowcaseGroup",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/pages/design-system/design-system-page.component.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "ButtonShowcaseVariant",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
