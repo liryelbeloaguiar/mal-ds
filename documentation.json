@@ -1477,7 +1477,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"success\" | \"warning\" | \"danger\" | \"info\"",
-                "file": "src/app/components/card/card.component.ts",
+                "file": "src/app/components/badge/badge.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1488,7 +1488,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"success\" | \"warning\" | \"danger\" | \"info\"",
-                "file": "src/app/components/badge/badge.component.ts",
+                "file": "src/app/components/card/card.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1579,6 +1579,19 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "src/app/components/badge/badge.component.ts": [
+                {
+                    "name": "BadgeVariant",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "\"success\" | \"warning\" | \"danger\" | \"info\"",
+                    "file": "src/app/components/badge/badge.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 193
+                }
+            ],
             "src/app/components/card/card.component.ts": [
                 {
                     "name": "BadgeVariant",
@@ -1597,19 +1610,6 @@
                     "subtype": "typealias",
                     "rawtype": "\"default\" | \"active\" | \"dark\"",
                     "file": "src/app/components/card/card.component.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 193
-                }
-            ],
-            "src/app/components/badge/badge.component.ts": [
-                {
-                    "name": "BadgeVariant",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "\"success\" | \"warning\" | \"danger\" | \"info\"",
-                    "file": "src/app/components/badge/badge.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",

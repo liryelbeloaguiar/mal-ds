@@ -1,0 +1,168 @@
+:host {
+  display: inline-flex;
+}
+
+:host-context(.component-grid) {
+  min-width: 0;
+}
+
+:host-context(.component-grid) .btn {
+  width: 100%;
+}
+
+/* ================================================== */
+/* Base */
+/* ================================================== */
+
+.btn {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  min-height: 40px;
+  padding: 0 1rem;
+
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+
+  font: inherit;
+  font-weight: 500;
+
+  cursor: pointer;
+  user-select: none;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 120ms ease;
+
+  will-change: transform;
+}
+
+/* ================================================== */
+/* Focus */
+/* ================================================== */
+
+.btn:focus-visible {
+  outline: none;
+
+  box-shadow:
+    0 0 0 2px var(--mal-focus-inner, white),
+    0 0 0 4px var(--mal-focus-ring, #3b82f6);
+}
+
+/* ================================================== */
+/* Active */
+/* ================================================== */
+
+.btn:active:not(:disabled) {
+  animation: mal-button-press 180ms ease-out;
+}
+
+/* ================================================== */
+/* Disabled */
+/* ================================================== */
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ================================================== */
+/* Icon */
+/* ================================================== */
+
+.btn-icon {
+  width: 40px;
+  padding: 0;
+  aspect-ratio: 1;
+}
+
+/* ================================================== */
+/* Primary */
+/* ================================================== */
+
+.btn-primary {
+  background: var(--mal-primary, #2563eb);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--mal-primary-hover, #1d4ed8);
+}
+
+.btn-primary:active:not(:disabled) {
+  background: var(--mal-primary-active, #1e40af);
+}
+
+/* ================================================== */
+/* Secondary */
+/* ================================================== */
+
+.btn-secondary {
+  background: var(--mal-secondary, #e5e7eb);
+  color: var(--mal-secondary-text, #111827);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--mal-secondary-hover, #d1d5db);
+}
+
+.btn-secondary:active:not(:disabled) {
+  background: var(--mal-secondary-active, #9ca3af);
+}
+
+/* ================================================== */
+/* Danger */
+/* ================================================== */
+
+.btn-danger {
+  background: var(--mal-danger, #dc2626);
+  color: white;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: var(--mal-danger-hover, #b91c1c);
+}
+
+.btn-danger:active:not(:disabled) {
+  background: var(--mal-danger-active, #991b1b);
+}
+
+/* ================================================== */
+/* Ghost */
+/* ================================================== */
+
+.btn-ghost {
+  background: transparent;
+  color: var(--mal-primary, #2563eb);
+  border-color: transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.btn-ghost:active:not(:disabled) {
+  background: rgba(37, 99, 235, 0.16);
+}
+
+@keyframes mal-button-press {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
