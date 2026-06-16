@@ -1,12 +1,14 @@
 {
-  "name": "@mal/ui",
+  "name": "@mal-rn/ui",
   "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^21.2.0",
     "@angular/core": "^21.2.0"
   },
   "dependencies": {
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "@mal-rn/core": "^0.0.1",
+    "@mal-rn/tokens": "^0.0.1"
   },
   "sideEffects": false
 }

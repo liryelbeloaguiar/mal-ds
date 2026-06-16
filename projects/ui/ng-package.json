@@ -3,5 +3,9 @@
   "dest": "../../dist/ui",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "@mal-rn/core",
+    "@mal-rn/tokens"
+  ]
 }

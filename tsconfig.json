@@ -15,14 +15,14 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "core": [
-        "./dist/core"
+      "@mal-rn/core": [
+        "./projects/core/src/public-api.ts"
       ],
-      "tokens": [
-        "./dist/tokens"
+      "@mal-rn/tokens": [
+        "./projects/tokens/src/public-api.ts"
       ],
-      "ui": [
-        "./dist/ui"
+      "@mal-rn/ui": [
+        "./projects/ui/src/public-api.ts"
       ]
     }
   },
