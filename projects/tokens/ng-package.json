@@ -3,5 +3,9 @@
   "dest": "../../dist/tokens",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "assets": [
+    { "input": "src/assets", "glob": "**/*", "output": "assets" },
+    { "input": "src/lib/styles", "glob": "**/*", "output": "styles" }
+  ]
 }

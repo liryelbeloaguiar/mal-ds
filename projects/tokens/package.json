@@ -8,5 +8,16 @@
   "dependencies": {
     "tslib": "^2.3.0"
   },
-  "sideEffects": false
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
+  "exports": {
+    "./styles": {
+      "default": "./styles/css/mal-tokens.css"
+    },
+    "./styles/scss": {
+      "default": "./styles/scss/mal-tokens.scss"
+    }
+  }
 }
